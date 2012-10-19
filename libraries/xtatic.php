@@ -203,7 +203,7 @@ class Xtatic {
 					$full_uri = HTML::email($uri);
 
 					// If there is class set on the config for external links we’ll grab it now
-					if (Config::get('xtatic::xtatic.external_link_class')) $link_classes[] = Config::get('xtatic::xtatic.mailto_link_class');
+					if (Config::get('xtatic::xtatic.mailto_link_class')) $link_classes[] = Config::get('xtatic::xtatic.mailto_link_class');
 
 					if ( Config::get('xtatic::xtatic.new_window_for_external_links') ) $link_attributes['target'] = '_blank';
 					break;
