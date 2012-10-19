@@ -305,7 +305,7 @@ return array(
 	| Inactive Link Class
 	|--------------------------------------------------------------------------
 	|
-	| A CSS class name to apply to menu items which conain an inactive link
+	| A CSS class name to apply to menu items which contain an inactive link
 	| (i.e. it corresponds to the current page). Set as NULL if no additional
 	| class is required. Make sure this doesn’t clash with the name of any key
 	| defined on the pages array.
@@ -313,6 +313,19 @@ return array(
 	*/
 
 	'inactive_link_class' => 'inactive-link',
+	
+	/*
+	|--------------------------------------------------------------------------
+	| Mailto Link Class
+	|--------------------------------------------------------------------------
+	|
+	| A CSS class name to apply to menu items which contain an email link.
+	| Set as NULL if no additional class is required. Make sure this doesn’t
+	| clash with the name of any key defined on the pages array.
+	|
+	*/
+
+	'mailto_link_class' => 'email-link',
 
 	/*
 	|--------------------------------------------------------------------------
