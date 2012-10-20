@@ -1,6 +1,6 @@
 # Xtatic For Laravel
 
-### A simple-to-use view-based mini-framework for lazy web developers.
+### Easy to use view-based mini-framework for lazy web developers.
 
 ## Overview
 Xtatic is a Laravel bundle to facilitate rapid deployment and easy maintenance of small, static websites.
@@ -32,7 +32,7 @@ Open `application/routes.php` and add the following route to divert requests to 
 	    return Xtatic::make( $slug );
 	});
 
-Here we are using a `get` route to deal with GET requests only. The first parameter is an array with two member elements. The first is a slash `/` which will route requests to the route URL, and the second `(:any)` will divert any single segment URI.
+This route will just respond to GET requests. Passing an array containing `/` and `(:any)` ensures that requests to the root URL or any single segment URL will be handled by this route.
 
 The second parameter is a callback function which accepts the first URI segment as the `$slug` parameter and passes it to the Xtatic class, returning the result.
 
