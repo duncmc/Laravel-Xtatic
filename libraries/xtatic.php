@@ -447,9 +447,11 @@ class Xtatic {
 	 * Prime $content for retrieval in the view. Assemble and return the page view.
 	 *
 	 * @access	public
+	 * @param	string		URL slug ti identify content
+	 * @param	array 		Data which will be bound to the View
 	 * @return 	mixed
 	 */
-	public static function make( $slug=NULL )
+	public static function make( $slug=NULL, $data=array() )
 	{
 		// If maintenance mode is on (defined in the config file) we’ll return 503
 		if ( Config::get('xtatic::xtatic.maintenance_mode_on') ) {
@@ -461,7 +463,7 @@ class Xtatic {
 		
 		// Retrieve the main content view - doing it here gives us the opportunity to
 		// make any asset calls within the views and inject code into the document head
-		static::$content = static::prime_the_content();
+		static::$content = static::prime_the_content( $data );
 		
 		// Check that the slug provided corresponds to a page set on the config
 		if ( array_key_exists( static::$slug, Config::get('xtatic::xtatic.pages' ) ) ) {
@@ -470,7 +472,7 @@ class Xtatic {
 			static::$page_meta = Config::get('xtatic::xtatic.pages.' . static::$slug);
 			
 			// Pick up the view
-			return View::make( Config::get('xtatic::xtatic.site_template') );
+			return View::make( Config::get('xtatic::xtatic.site_template'), $data );
 			
 		} else {
 			// Requested page is not specified in the config so we’ll bail out...
@@ -649,20 +651,21 @@ class Xtatic {
 	 * inject asset calls that may be required on a per view basis.
 	 * 
 	 * @access	private
+	 * @param	array 		Data to bind to the View
 	 * @return 	string;
 	 */
-	private static function prime_the_content()
+	private static function prime_the_content( $data=array() )
 	{
 		switch ( TRUE ) {
 			
 			// Slug has a corresponding content view
 			case View::exists( Config::get('xtatic::xtatic.path_to_page_views') . static::$slug ) :
-				return render( Config::get('xtatic::xtatic.path_to_page_views') . static::$slug );
+				return render( Config::get('xtatic::xtatic.path_to_page_views') . static::$slug, $data );
 				break;
 			
 			// Slug has no corresponding page view but a fallback placeholder view exists
 			case View::exists( Config::get('xtatic::xtatic.content_placeholder') ) :
-				return render( Config::get('xtatic::xtatic.content_placeholder') );
+				return render( Config::get('xtatic::xtatic.content_placeholder'), $data );
 				break;
 			
 			// Slug has no corresponding page view and there is no fallback placeholder view
