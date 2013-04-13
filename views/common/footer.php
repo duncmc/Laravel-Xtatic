@@ -1,4 +1,1 @@
-	<footer id="layout-footer">
-	
-	
-	</footer>
+	<p>Footer content goes here.</p>

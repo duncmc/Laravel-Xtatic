@@ -621,7 +621,7 @@ class Xtatic {
 				break;
 				
 			case 'title' :
-				return '<title>' . static::$page_meta['title'] . '</title>';
+				return '<title>' . static::$page_meta['title'] . '</title>' . "\n";
 				break;
 				
 			case 'site_owner' :
