@@ -26,14 +26,14 @@
 
 <?=Xtatic::content()?>
 
-</div>
-<!-- END Container -->
-
 <footer id="layout-footer">
 <?=render('xtatic::common.footer')?>
 </footer>
 
-<small class="attribution">&copy; <?=date('Y')?> &middot; <?=Xtatic::get('site_owner')?> &middot; Website by Art &amp; Soul <a href="http://www.artandsoul.co.uk">Web Design Hull</a></small>
+</div>
+<!-- END Container -->
+
+<small id="layout-attribution">&copy; <?=date('Y')?> &middot; <?=Xtatic::get('site_owner')?> &middot; Website by Art &amp; Soul <a href="http://www.artandsoul.co.uk">Web Design Hull</a></small>
 
 <?=Xtatic::tail()?>
 
