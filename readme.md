@@ -181,7 +181,7 @@ If you have a secondary navigation element which features the same elements as t
 
 	Xtatic::ancestors( string $slug=NULL, bool $include_root=FALSE )
 	
-Iterates across the first defined element on the `navigations` configuration parameter looking for a key matching the value of `$slug`. If a match is found then an array of page keys is returned based on their positions in `navigations`. Array elements are in order of descending seniority.
+Iterates across the first defined element on the `navigations` configuration array looking for a key matching the value of `$slug`. If a match is found then an array of page keys is returned based on their positions in `navigations`. Array elements are in order of descending seniority.
 
 If a null value is passed in `$slug` then the slug value of the current page is used.
 
@@ -189,30 +189,34 @@ If a null value is passed in `$slug` then the slug value of the current page is 
 
 	Xtatic::siblings( string $slug=NULL )
 
+Looks for an element in the `navigations` configuration array with a key value matching `$slug`. If a match is found then an array of keys which include sibling elements is returned.
 
+If a null value is passed in `$slug` then the slug value of the current page is used.
 
 ### Children
 
 	Xtatic::children( string $slug=NULL )
 
+	Looks for an element in the `navigations` configuration array with a key value matching `$slug`. If a match is found then an array of keys which include child elements is returned.
 
+	If a null value is passed in `$slug` then the slug value of the current page is used.
 
 ### Page Data
 
 	
 	Xtatic::page_data( string $slug=NULL )
 
-
+	Documentation required.
 
 ### Add JavaScript
 
 	Xtatic::add_javascript( string  $js, bool $in_head=FALSE  )
 
-
+	Documentation required.
 
 ### Add jQuery
 
 	Xtatic::add_jquery( string  $js, bool $in_head=FALSE  )
 
-
+	Documentation required.
 
