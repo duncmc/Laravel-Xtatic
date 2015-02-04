@@ -548,6 +548,7 @@ class Xtatic {
 		
 		// Get Google Analytics tracking code
 		$html .= static::javascript( static::google_analytics() );
+		$html .= Asset::scripts();
 		
 		// Get inline JS
 		$html .= static::javascript( static::$js_in_head );
